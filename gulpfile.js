@@ -16,5 +16,8 @@ gulp.task('typescript', function() {
     var tsResult = tsProject.src('app/**/*.ts')
         .pipe(ts(tsProject));
 
-    return tsResult.js.pipe(uglify()).pipe(gulp.dest('app'));
+    return tsResult.js.pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('public/app'));
 });

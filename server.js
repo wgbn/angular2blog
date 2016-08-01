@@ -167,7 +167,7 @@ function __routePostsGet(req, res) {
 function __routePostsPost(req, res) {
     var post = new Post();
     post.title = req.body.title;
-    post.text = req.body.text;
+    post.body = req.body.body;
     post.user = req.body.user._id;
 
     if (post.title==null)

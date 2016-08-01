@@ -1,0 +1,13 @@
+<div class="alert alert-info" *ngIf="showLoading">Aguarde...</div>
+<div *ngIf="!showLoading">
+    <div *ngIf="_loginService.isLogged()" class="alert alert-success">
+        Olá {{_loginService.getUser().name}}
+        <a href="#" (click)="logout($event)" class="pull-right">Sair</a>
+    </div>
+    <div class="jumbotron" *ngFor="let p of posts">
+        <h1>{{p.title}}</h1>
+        <p>{{p.body}}</p>
+        <p>Por: {{p.user?.name}}</p>
+        <a href="#" (click)="deletePost(p)" *ngIf="checkPost(p)">Apagar</a>
+    </div>
+</div>
