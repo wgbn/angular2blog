@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <title>Document</title>
+
+    <script src="libs/angular2-polyfills.js"></script>
+    <script src="libs/system.src.js"></script>
+    <script src="libs/Rx.js"></script>
+    <script src="libs/angular2.dev.js"></script>
+    <script src="libs/http.dev.js"></script>
+    <script src="libs/router.dev.js"></script>
+    <link rel="stylesheet" href="libs/css/bootstrap.min.css">
+
+    <!-- boot -->
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/boot').then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+    <my-app>Loading...</my-app>
+</body>
+</html>
